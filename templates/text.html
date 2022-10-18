@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% include "nav.html" %}
+    <h1>{{ hello }}</h1>
+    <h2>这里是不可变的部分</h2>
+    <p>可以添加默认值：{{ none|default:"这是默认值"}}</p>
+    <p>整个列表：{{ lst }}</p>
+    <p>取出第一个：{{ lst.0 }}</p>
+    <p>整个字典： {{dic}}</p>
+    <p>字典取值：{{ dic.a }}</p>
+    <p>upper过滤器: {{ hello|upper }}</p>
+    <p>length返回长度: {{ hello| length}}</p>
+    <p>完整的时间：{{ now }}</p>
+    <p>时间过滤器：{{ now|date:"F j, Y" }}</p>
+    <h2>下面是非线性结构</h2>
+    <h3>if条件语句</h3>
+    <p>一个随机数{{ random }}</p>
+    {% if random < 0.3 %}
+        现在随机数小于0.3
+    {% elif random >= 0.3 and random <= 0.6 %}
+        现在随机数在0.3和0.6之间
+    {% else %}
+        现在随机数大于0.6
+    {% endif %}
+    
+    <h3>for循环</h3>
+    逐个列举列表
+    <ol>
+        {% for obj in lst %}
+            <li>{{ obj }}</li>
+        {% endfor %}
+    </ol>
+    倒着列举(reversed)
+    <ol>
+        {% for obj in lst reversed %}
+            <li>{{ obj }}</li>
+        {% endfor %}
+    </ol>
+    遍历字典：
+    <ul>
+        {% for i,j in dic.items %}
+            <li>{{ i }} : {{ j }}</li>
+        {% endfor %}
+    </ul>
+    forloop变量
+    <ul>
+        {% for i in lst %}
+            {{ forloop.counter }}
+            <!-- {{ forloop.counter0 }}
+            {{ forloop.recounter }}
+            {{ forloop.recounter0 }}
+            {{ forloop.first }}
+            {{ forloop.last }} -->
+        {% endfor %}
+    </ul>
+    处理空值（或者是未定义的值）：
+    <p>lst2是:{{ lst2 }}</p>
+    {% for i in lst2 %}
+        <li>{{ i }}</li>
+    {% empty %}
+        <p>lst2是空的</p>
+    {% endfor %}
+    <h2>自定义过滤器</h2>
+    {% load my_tags %}
+    <p>随机数：{{ random }}</p>
+    <p>开3次方：{{ random|sqrt:3 }}</p>
+    <h2>自定义标签</h2>
+    有点像自定义函数？
+    <p>{% product 11 22 33%}</p>
+    <h2>静态文件</h2>
+    <p>加载一个图片</p>
+    {% load static %}
+    <img src="{% static 'images/im.png' %}" alt="看不懂？">
+    <h2>模版继承</h2>
+
+</body>
+{% include "footer.html" %}
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    <h1>父子模版继承</h1>
+    <p>下面是mianbody block</p>
+    {% block mainbody %}
+    <p>original, to be substituted</p>
+    {% endblock %}
+    <p>下面是footer block</p>
+    {% block footer %}
+    <footer>
+        <p>Author: 张杨</p>
+        <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+    </footer>
+    {% endblock %}
+</body>
+</html>

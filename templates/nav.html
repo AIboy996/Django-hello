@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/nav.css'%}">
+<nav class="crumbs">
+    <ol>
+        {% for i,j in address.items %}
+        <li class="crumb"><a href="{{ i }}">{{ j }}</a></li>
+        {% endfor %}
+        <li class="crumb">{{ pagename }}</li>
+    </ol>
+</nav>
+  

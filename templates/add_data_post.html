@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+    {% include "nav.html" %}
+    <p>请输入</p>
+    <form action="/add/" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="loc" placeholder="location">
+        <input type="submit" value="提交">
+    </form>
+    <p>已添加：</p>
+    {% for i,j in dic.items %}
+    <p>{{ i }}:{{ j }}<br></p>
+    {% empty %}
+    <p>-</p>
+    {% endfor %}
+    <a href="../query">查询现有数据</a>
+</body>
+</html>

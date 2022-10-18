@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模型</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    <h1>Model</h1>
+    实现了一个简单的数据库model, 定义如下
+    <p>
+    class Test(models.Model):<br>
+        &emsp;name = models.CharField(max_length=20)<br>
+        &emsp;loc = models.CharField(max_length=20, default='')
+    </p>
+    实现了以下功能：
+    <ul>
+        <li><a href="./add/">添加数据</a></li>
+        <li><a href="./query">查询数据</a></li>
+        <li><a href="./update">更新数据</a></li>
+        <li><a href="./delete">删除数据</a></li>
+    </ul>
+</body>
+</html>

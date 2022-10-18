@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    <h1>Welcome!</h1>
+    站内导航：
+    <ul>
+        <li><a href="/text/">模版语法实践</a></li>
+        <li><a href="/child/">模版继承</a></li>
+        <li><a href="/model/">模型</a></li>
+        <ul>
+            <li><a href="/model/add/">增加数据</a></li>
+            <li><a href="/model/query/">查询数据</a></li>
+            <li><a href="/model/update/">更新数据</a></li>
+            <li><a href="/model/delete/">删除数据</a></li>
+        </ul>
+        <li><a href="/search-form/">GET请求</a></li>
+        <li><a href="/search-post/">POST请求</a></li>
+        <li><a href="/request-info/">REQUEST的内容</a></li>
+    </ul>
+</body>
+</html>
