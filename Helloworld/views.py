@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 
 # Home页面
 def hello(request):
@@ -74,3 +74,8 @@ def info(request):
     response = render(request,"nav.html", ctx)
     response.write(s)
     return  response
+
+# 正则匹配
+def re_match(request, year, month, day):
+    s = f"year:{year}   month:{month}   day:{day}"
+    return HttpResponse(s)

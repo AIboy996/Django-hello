@@ -6,7 +6,7 @@
 <body>
     {% include "nav.html" %}
     <p>请输入</p>
-    <form action="/add/" method="post">
+    <form action="/model/add/" method="post">
         {% csrf_token %}
         <input type="text" name="name" placeholder="name">
         <input type="text" name="loc" placeholder="location">
