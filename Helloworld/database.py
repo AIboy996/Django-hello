@@ -32,7 +32,7 @@ def query(request):
         '/model':'模型',
     }}
     response = render(request, "nav.html", ctx)
-    response.write(f"{s}</table><br><a href='../add/'>添加数据</a>")
+    response.write(f"{s}</table><br><a href='../add/'>添加数据</a>")
     return response
 
 # 更多查询

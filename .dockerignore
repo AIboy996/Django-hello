@@ -1,0 +1,5 @@
+readme.md
+/assets
+docker-compose.yml
+.dockerignore
+Dockerfile

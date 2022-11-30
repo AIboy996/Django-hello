@@ -82,11 +82,11 @@ DATABASES = {
     'default': 
     { 
         'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
-        'NAME': '数据库课程', # 数据库名称
-        'HOST': '127.0.0.1', # 数据库地址，本机 ip 地址 127.0.0.1 
-        'PORT': 3306, # 端口 
+        'NAME': 'django_hello', # 数据库名称
+        'HOST': 'mysql', # 在docker-compose中使用容器名作为host
+        'PORT': 3306, # 端口
         'USER': 'root',  # 数据库用户名
-        'PASSWORD': '10+2030z', # 数据库密码
+        'PASSWORD': '123456', # 数据库密码
     }  
 }
 
